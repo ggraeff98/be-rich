@@ -29,7 +29,7 @@ const StyleedLi = styled.li`
     padding: 5px 10px;
   }
 
-  @media (min-width: ${IPAD_PRO + 1}px) {
+  @media (min-width: ${IPAD_PRO + 2}px) {
     &:hover {
       cursor: pointer;
       background: rgba(149, 116, 136, 0.2);
