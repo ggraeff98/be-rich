@@ -11,7 +11,7 @@ const StyledUl = styled.ul`
   list-style: none;
   height: 100%;
 
-  @media (max-width: ${IPAD_PRO}) {
+  @media (max-width: ${IPAD_PRO + 1}px) {
     display: block;
   }
 `;
@@ -25,11 +25,11 @@ const StyleedLi = styled.li`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${IPAD_PRO}) {
+  @media (max-width: ${IPAD_PRO + 1}px) {
     padding: 5px 10px;
   }
 
-  @media (min-width: ${IPAD_PRO}) {
+  @media (min-width: ${IPAD_PRO + 1}px) {
     &:hover {
       cursor: pointer;
       background: rgba(149, 116, 136, 0.2);
@@ -52,7 +52,7 @@ const StyleedLi = styled.li`
 const headerItem = (props) => {
   const headerItems = props.menuOptions.map((option) => {
     return (
-      <StyleedLi>
+      <StyleedLi key={option.label}>
         <div>
           <img src={option.imagePath} alt={option.alt}></img>
           {option.label}

@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   height: 60px;
   background-color: ${LIGHT_GOLDEN};
 
-  @media (max-width: ${IPAD_PRO}) {
+  @media (max-width: ${IPAD_PRO + 1}px) {
     height: 100%;
     padding: 5px 10px;
   }
