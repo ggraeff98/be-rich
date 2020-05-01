@@ -1,11 +1,10 @@
 import React from 'react';
+import PageHeader from './components/PageHeader/PageHeader';
 
 function App() {
   return (
     <div>
-      <header>
-        <p>Hello rich people.</p>
-      </header>
+      <PageHeader></PageHeader>
     </div>
   );
 }
