@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NORMAL_WHITE } from '../../../constants/styleConstants';
-import { IPHONE_8_PLUS_PORTRAIT } from '../../../constants/breakPointConstants';
+import { IPAD_PRO } from '../../../constants/breakPointConstants';
 
 const StyledUl = styled.ul`
   display: flex;
@@ -11,7 +11,7 @@ const StyledUl = styled.ul`
   list-style: none;
   height: 100%;
 
-  @media (max-width: ${IPHONE_8_PLUS_PORTRAIT}) {
+  @media (max-width: ${IPAD_PRO}) {
     display: block;
   }
 `;
@@ -25,11 +25,11 @@ const StyleedLi = styled.li`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${IPHONE_8_PLUS_PORTRAIT}) {
+  @media (max-width: ${IPAD_PRO}) {
     padding: 5px 10px;
   }
 
-  @media (min-width: ${IPHONE_8_PLUS_PORTRAIT}) {
+  @media (min-width: ${IPAD_PRO}) {
     &:hover {
       cursor: pointer;
       background: rgba(149, 116, 136, 0.2);

@@ -1,1 +1,1 @@
-export const IPHONE_8_PLUS_PORTRAIT = `${414 + 1}px`;
+export const IPAD_PRO = `${1024 + 1}px`;
