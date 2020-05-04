@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     height: 100%;
-    padding: 5px 10px;
+    padding: 0px;
   }
 `;
 
@@ -20,13 +20,13 @@ const headerItems = [
   {
     imagePath: linearGraph,
     label: 'Renda Fixa',
-    alt: 'renda-fixa',
+    alt: 'renda-fixa'
   },
   {
     imagePath: variableGraph,
     label: 'Renda Variável',
-    alt: 'renda-variável',
-  },
+    alt: 'renda-variável'
+  }
 ];
 
 const pageHeader = (props) => {

@@ -26,16 +26,20 @@ const StyleedLi = styled.li`
   align-items: center;
 
   @media (max-width: ${IPAD_PRO + 1}px) {
+    border-top: 1px solid ${NORMAL_WHITE};
     padding: 5px 10px;
   }
 
-  @media (min-width: ${IPAD_PRO + 2}px) {
+  @media (min-width: ${IPAD_PRO + 1}px) {
     &:hover {
-      cursor: pointer;
       background: rgba(149, 116, 136, 0.2);
       font-weight: bold;
       border-bottom: 5px solid rgb(113, 145, 76);
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   div {
