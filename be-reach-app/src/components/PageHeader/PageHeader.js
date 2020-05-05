@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import linearGraph from '../../assets/svgs/linear-graphic.svg';
 import variableGraph from '../../assets/svgs/variable-graphic.svg';
+import closeIcon from '../../assets/svgs/close.svg';
 import { LIGHT_GOLDEN } from '../../constants/styleConstants';
 import { IPAD_PRO } from '../../constants/breakPointConstants';
 import HeaderItems from './HeaderItems/HeaderItems';
+import { LateralMenuContext } from '../../contexts/lateral-menu-context';
+
+const StyledToggleMenuIcons = styled.img`
+  padding: 5px 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const StyledHeader = styled.header`
-  height: 60px;
   background-color: ${LIGHT_GOLDEN};
 
   @media (max-width: ${IPAD_PRO + 1}px) {
-    height: 100%;
     padding: 0px;
+    height: 100%;
   }
 `;
 
@@ -29,12 +37,27 @@ const headerItems = [
   }
 ];
 
-const pageHeader = (props) => {
+const PageHeader = (props) => {
+  const lateralMenuContext = useContext(LateralMenuContext);
+
+  const onChangeMenuLateralState = () => {
+    lateralMenuContext.onToggleLateralMenu();
+  };
+
+  const closeLateralMenuIcon = (
+    <StyledToggleMenuIcons
+      src={closeIcon}
+      alt="close-menu"
+      onClick={() => onChangeMenuLateralState()}
+    ></StyledToggleMenuIcons>
+  );
+
   return (
     <StyledHeader>
+      {window.innerWidth <= IPAD_PRO + 1 ? closeLateralMenuIcon : null}
       <HeaderItems menuOptions={headerItems}></HeaderItems>
     </StyledHeader>
   );
 };
 
-export default pageHeader;
+export default PageHeader;

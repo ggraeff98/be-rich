@@ -10,7 +10,7 @@ const StyledUl = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 100%;
+  height: 60px;
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     display: block;
@@ -66,10 +66,8 @@ const HeaderItem = (props) => {
   const headerItems = props.menuOptions.map((option) => {
     return (
       <StyleedLi onClick={itemClicked} key={option.label}>
-        <div>
-          <img src={option.imagePath} alt={option.alt}></img>
-          {option.label}
-        </div>
+        <img src={option.imagePath} alt={option.alt}></img>
+        {option.label}
       </StyleedLi>
     );
   });

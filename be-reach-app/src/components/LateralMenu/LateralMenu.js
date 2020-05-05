@@ -1,21 +1,23 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import closeIcon from '../../assets/svgs/close.svg';
 import hamburguerIcon from '../../assets/svgs/hamburguer-menu.svg';
-import { LIGHT_GOLDEN } from '../../constants/styleConstants';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const StyledDivContainer = styled.div``;
 
+const StyledMenuOpenIconCOntainer = styled.div`
+  background: ${(props) => (!props.isOpen ? 'trasparent' : 'rgba(0, 0, 0, 0.3);')};
+  height: ${(props) => (props.isOpen ? '100vh' : 'unset')};
+`;
+
 const StyledDivListItems = styled.div`
   position: absolute;
-  width: 100%;
-  left: ${(props) => (props.isOpen ? '0%' : '-100%')};
+  width: 70%;
+  max-width: 500px;
+  left: ${(props) => (props.isOpen ? '0%' : '-70%')};
   transition: 1s;
-  background-color: ${LIGHT_GOLDEN};
-  padding-top: 5px;
+  height: 100%;
   top: 0;
-  height: calc(100% - 55px);
 `;
 
 const StyledToggleMenuIcons = styled.img`
@@ -44,36 +46,15 @@ const LateralMenu = (props) => {
     ></StyledToggleMenuIcons>
   );
 
-  const closeLateralMenuIcon = (
-    <StyledToggleMenuIcons
-      src={closeIcon}
-      alt="close-menu"
-      onClick={() => onChangeMenuLateralState()}
-    ></StyledToggleMenuIcons>
-  );
-
-  const touchPositions = {
-    start: 0,
-    end: 0
-  };
-
-  const handleTouchStart = (e) => {
-    touchPositions.start = e.changedTouches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    touchPositions.end = e.changedTouches[0].clientX;
-    if (touchPositions.end + 20 < touchPositions.start) onChangeMenuLateralState();
-  };
-
   return (
-    <StyledDivContainer
-      onTouchStart={(touchMoveEvent) => handleTouchStart(touchMoveEvent)}
-      onTouchEnd={(touchMoveEvent) => handleTouchEnd(touchMoveEvent)}
-    >
-      {!lateralMenuContext.lateralMenuState ? openLateralMenuIcon : null}
+    <StyledDivContainer>
+      <StyledMenuOpenIconCOntainer
+        onClick={onChangeMenuLateralState}
+        isOpen={lateralMenuContext.lateralMenuState}
+      >
+        {openLateralMenuIcon}
+      </StyledMenuOpenIconCOntainer>
       <StyledDivListItems isOpen={lateralMenuContext.lateralMenuState}>
-        {closeLateralMenuIcon}
         {props.children}
       </StyledDivListItems>
     </StyledDivContainer>
