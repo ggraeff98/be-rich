@@ -10,12 +10,12 @@ const StyledDivContainer = styled.div``;
 const StyledDivListItems = styled.div`
   position: absolute;
   width: 100%;
-  transform: translateY(-50%);
   left: ${(props) => (props.isOpen ? '0%' : '-100%')};
   transition: 1s;
-  top: 70px;
   background-color: ${LIGHT_GOLDEN};
   padding-top: 5px;
+  top: 0;
+  height: calc(100% - 55px);
 `;
 
 const StyledToggleMenuIcons = styled.img`
@@ -36,8 +36,6 @@ const LateralMenu = (props) => {
     lateralMenuContext.onToggleLateralMenu();
   };
 
-  console.log(lateralMenuContext.lateralMenuState);
-
   const openLateralMenuIcon = (
     <StyledToggleMenuIcons
       src={hamburguerIcon}
@@ -54,8 +52,25 @@ const LateralMenu = (props) => {
     ></StyledToggleMenuIcons>
   );
 
+  const touchPositions = {
+    start: 0,
+    end: 0
+  };
+
+  const handleTouchStart = (e) => {
+    touchPositions.start = e.changedTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchPositions.end = e.changedTouches[0].clientX;
+    if (touchPositions.end + 20 < touchPositions.start) onChangeMenuLateralState();
+  };
+
   return (
-    <StyledDivContainer>
+    <StyledDivContainer
+      onTouchStart={(touchMoveEvent) => handleTouchStart(touchMoveEvent)}
+      onTouchEnd={(touchMoveEvent) => handleTouchEnd(touchMoveEvent)}
+    >
       {!lateralMenuContext.lateralMenuState ? openLateralMenuIcon : null}
       <StyledDivListItems isOpen={lateralMenuContext.lateralMenuState}>
         {closeLateralMenuIcon}

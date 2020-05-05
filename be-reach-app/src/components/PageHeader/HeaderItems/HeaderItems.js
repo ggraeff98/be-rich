@@ -14,6 +14,7 @@ const StyledUl = styled.ul`
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     display: block;
+    height: unset;
   }
 `;
 
@@ -29,6 +30,7 @@ const StyleedLi = styled.li`
   @media (max-width: ${IPAD_PRO + 1}px) {
     border-top: 1px solid ${NORMAL_WHITE};
     padding: 5px 10px;
+    height: unset;
   }
 
   @media (min-width: ${IPAD_PRO + 1}px) {
