@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
 import closeIcon from '../../assets/svgs/close.svg';
 import hamburguerIcon from '../../assets/svgs/hamburguer-menu.svg';
-import styled from 'styled-components';
 import { LIGHT_GOLDEN } from '../../constants/styleConstants';
+import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const StyledDivContainer = styled.div``;
 
@@ -29,21 +30,19 @@ StyledDivListItems.defaultProps = {
 };
 
 const LateralMenu = (props) => {
-  const [lateralMenuState, setLateralMenuState] = useState({
-    isOpen: false
-  });
+  const lateralMenuContext = useContext(LateralMenuContext);
 
-  const onChangeMenuLateralState = (show) => {
-    setLateralMenuState({
-      isOpen: show
-    });
+  const onChangeMenuLateralState = () => {
+    lateralMenuContext.onToggleLateralMenu();
   };
+
+  console.log(lateralMenuContext.lateralMenuState);
 
   const openLateralMenuIcon = (
     <StyledToggleMenuIcons
       src={hamburguerIcon}
       alt="open-menu"
-      onClick={() => onChangeMenuLateralState(true)}
+      onClick={() => onChangeMenuLateralState()}
     ></StyledToggleMenuIcons>
   );
 
@@ -51,14 +50,14 @@ const LateralMenu = (props) => {
     <StyledToggleMenuIcons
       src={closeIcon}
       alt="close-menu"
-      onClick={() => onChangeMenuLateralState(false)}
+      onClick={() => onChangeMenuLateralState()}
     ></StyledToggleMenuIcons>
   );
 
   return (
     <StyledDivContainer>
-      {!lateralMenuState.isOpen ? openLateralMenuIcon : null}
-      <StyledDivListItems isOpen={lateralMenuState.isOpen}>
+      {!lateralMenuContext.lateralMenuState ? openLateralMenuIcon : null}
+      <StyledDivListItems isOpen={lateralMenuContext.lateralMenuState}>
         {closeLateralMenuIcon}
         {props.children}
       </StyledDivListItems>

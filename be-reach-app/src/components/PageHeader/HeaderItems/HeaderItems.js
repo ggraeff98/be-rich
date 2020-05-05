@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { NORMAL_WHITE } from '../../../constants/styleConstants';
 import { IPAD_PRO } from '../../../constants/breakPointConstants';
+import { LateralMenuContext } from '../../../contexts/lateral-menu-context';
 
 const StyledUl = styled.ul`
   display: flex;
@@ -53,10 +54,16 @@ const StyleedLi = styled.li`
   }
 `;
 
-const headerItem = (props) => {
+const HeaderItem = (props) => {
+  const lateralMenuContext = useContext(LateralMenuContext);
+
+  const itemClicked = () => {
+    lateralMenuContext.onToggleLateralMenu();
+  };
+
   const headerItems = props.menuOptions.map((option) => {
     return (
-      <StyleedLi key={option.label}>
+      <StyleedLi onClick={itemClicked} key={option.label}>
         <div>
           <img src={option.imagePath} alt={option.alt}></img>
           {option.label}
@@ -68,4 +75,4 @@ const headerItem = (props) => {
   return <StyledUl>{headerItems}</StyledUl>;
 };
 
-export default headerItem;
+export default HeaderItem;
