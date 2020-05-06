@@ -8,6 +8,15 @@ import { IPAD_PRO } from '../../constants/breakPointConstants';
 import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
+const fixedIncomes = [
+  { name: 'Títulos Públicos' },
+  { name: 'CDBs' },
+  { name: 'CRAs' },
+  { name: 'CRISs' },
+  { name: 'LCAa' },
+  { name: 'LCIs' }
+];
+
 const StyledToggleMenuIcons = styled.img`
   padding: 5px 10px;
   &:hover {
@@ -20,7 +29,7 @@ const StyledHeader = styled.header`
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     padding: 0px;
-    height: 100%;
+    height: 100vh;
   }
 `;
 
@@ -28,12 +37,16 @@ const headerItems = [
   {
     imagePath: linearGraph,
     label: 'Renda Fixa',
-    alt: 'renda-fixa'
+    alt: 'renda-fixa',
+    relatedIncomes: fixedIncomes,
+    selected: false
   },
   {
     imagePath: variableGraph,
     label: 'Renda Variável',
-    alt: 'renda-variável'
+    alt: 'renda-variável',
+    relatedIncomes: fixedIncomes,
+    selected: false
   }
 ];
 

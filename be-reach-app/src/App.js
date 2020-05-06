@@ -7,6 +7,7 @@ import LateralMenuProvider from './contexts/lateral-menu-context';
 
 const StyleedDivMain = styled.div`
   touch-action: manipulation;
+  font-family: 'Ubuntu';
 `;
 
 const App = () => {

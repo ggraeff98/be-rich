@@ -5,16 +5,17 @@ import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const StyledDivContainer = styled.div``;
 
-const StyledMenuOpenIconCOntainer = styled.div`
+const StyledMenuOpenIconContainer = styled.div`
   background: ${(props) => (!props.isOpen ? 'trasparent' : 'rgba(0, 0, 0, 0.3);')};
   height: ${(props) => (props.isOpen ? '100vh' : 'unset')};
+  width: ${(props) => (!props.isOpen ? '0px' : '100%')};
 `;
 
-const StyledDivListItems = styled.div`
+const StyledDivListItems = styled.nav`
   position: absolute;
-  width: 70%;
+  width: 75%;
   max-width: 500px;
-  left: ${(props) => (props.isOpen ? '0%' : '-70%')};
+  left: ${(props) => (props.isOpen ? '0%' : '-75%')};
   transition: 1s;
   height: 100%;
   top: 0;
@@ -48,12 +49,12 @@ const LateralMenu = (props) => {
 
   return (
     <StyledDivContainer>
-      <StyledMenuOpenIconCOntainer
+      <StyledMenuOpenIconContainer
         onClick={onChangeMenuLateralState}
         isOpen={lateralMenuContext.lateralMenuState}
       >
         {openLateralMenuIcon}
-      </StyledMenuOpenIconCOntainer>
+      </StyledMenuOpenIconContainer>
       <StyledDivListItems isOpen={lateralMenuContext.lateralMenuState}>
         {props.children}
       </StyledDivListItems>
