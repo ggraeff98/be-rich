@@ -6,7 +6,7 @@ const StyledPageContentContainer = styled.div``;
 const pageContent = () => {
   return (
     <StyledPageContentContainer>
-      <div>aaaaaaaaaaaaa</div>
+      <div>Content here</div>
     </StyledPageContentContainer>
   );
 };
