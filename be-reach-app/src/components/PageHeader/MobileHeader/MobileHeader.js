@@ -3,11 +3,14 @@ import hamburguerIcon from '../../../assets/svgs/hamburguer-menu.svg';
 import styled from 'styled-components';
 import { LateralMenuContext } from '../../../contexts/lateral-menu-context';
 import SearchBar from '../../SearchBar/SearchBar';
+import { NORMAL_WHITE } from '../../../constants/styleConstants';
 
 const StyledMobileHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  background-color: ${NORMAL_WHITE};
 `;
 
 const StyledToggleMenuIcons = styled.img`

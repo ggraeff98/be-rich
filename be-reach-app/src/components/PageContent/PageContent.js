@@ -4,6 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 
 const StyledPageContentContainer = styled.div`
   padding: 0 10px;
+  height: calc(100% - 45px);
+  margin-top: 45px;
+  width: 100%;
 `;
 
 const pageContent = () => {
