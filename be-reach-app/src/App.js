@@ -4,6 +4,8 @@ import LateralMenu from './components/LateralMenu/LateralMenu';
 import styled from 'styled-components';
 import { IPAD_PRO } from './constants/breakPointConstants';
 import LateralMenuProvider from './contexts/lateral-menu-context';
+import MobileHeader from './components/PageHeader/MobileHeader/MobileHeader';
+import PageContent from './components/PageContent/PageContent';
 
 const StyleedDivMain = styled.div`
   touch-action: manipulation;
@@ -15,9 +17,11 @@ const App = () => {
     <StyleedDivMain>
       {window.innerWidth <= IPAD_PRO + 1 ? (
         <LateralMenuProvider>
+          <MobileHeader></MobileHeader>
           <LateralMenu>
             <PageHeader></PageHeader>
           </LateralMenu>
+          <PageContent></PageContent>
         </LateralMenuProvider>
       ) : (
         <PageHeader></PageHeader>
