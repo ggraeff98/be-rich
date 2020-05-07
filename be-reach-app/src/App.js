@@ -4,7 +4,6 @@ import LateralMenu from './components/LateralMenu/LateralMenu';
 import styled from 'styled-components';
 import { IPAD_PRO } from './constants/breakPointConstants';
 import LateralMenuProvider from './contexts/lateral-menu-context';
-import { Route } from 'react-router-dom';
 import MobileHeader from './components/PageHeader/MobileHeader/MobileHeader';
 import PageContent from './components/PageContent/PageContent';
 

@@ -106,7 +106,7 @@ const HeaderItem = (props) => {
     index === selectedItemState.index
       ? setSelectedItemState({ index: null })
       : setSelectedItemState({ index });
-    if (index == 0) {
+    if (index === 0) {
       itemClicked('inicio');
     }
   };

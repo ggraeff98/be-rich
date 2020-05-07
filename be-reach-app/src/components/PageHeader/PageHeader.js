@@ -9,8 +9,6 @@ import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 import money from '../../assets/images/money-bag.png';
 
-const homeLink = [{ name: 'Início', path: 'inicio' }];
-
 const fixedIncomesLinks = [
   { name: 'O que é?', path: 'renda-fixa' },
   { name: 'Títulos Públicos', path: 'renda-fixa-titulos-publicos' },
