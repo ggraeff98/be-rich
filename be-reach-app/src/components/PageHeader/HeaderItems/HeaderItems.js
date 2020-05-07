@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { IPAD_PRO } from '../../../constants/breakPointConstants';
 import { NORMAL_WHITE } from '../../../constants/styleConstants';
 import { LateralMenuContext } from '../../../contexts/lateral-menu-context';
+import { NavLink } from 'react-router-dom';
 
 const StyledDivContainer = styled.div`
   height: 100%;
@@ -122,7 +123,7 @@ const HeaderItem = (props) => {
               option.relatedIncomes.map((item) => {
                 return (
                   <StyledRelatedItemsLi onClick={itemClicked} key={item.name}>
-                    {item.name}
+                    <NavLink to={`/${item.path}`}>{item.name}</NavLink>
                   </StyledRelatedItemsLi>
                 );
               })}

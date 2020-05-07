@@ -9,20 +9,21 @@ import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const fixedIncomes = [
-  { name: 'O que é?' },
-  { name: 'Títulos Públicos' },
-  { name: 'CDBs' },
-  { name: 'CRAs' },
-  { name: 'CRISs' },
-  { name: 'LCAs' },
-  { name: 'LCIs' }
+  { name: 'O que é?', path: 'renda-fixa' },
+  { name: 'Títulos Públicos', path: 'renda-fixa-titulos-publicos' },
+  { name: 'CDBs', path: 'renda-fixa-cdb' },
+  { name: 'CRAs', path: 'renda-fixa-cra' },
+  { name: 'CRISs', path: 'renda-fixa-cri' },
+  { name: 'LCAs', path: 'renda-fixa-lca' },
+  { name: 'LCIs', path: 'renda-fixa-lci' }
 ];
 
 const variableIncomes = [
-  { name: 'O que é?' },
-  { name: 'Ações' },
-  { name: 'Fundos Imobiliários' },
-  { name: 'Opções' }
+  { name: 'O que é?', path: 'renda-variavel' },
+  { name: 'Ações', path: 'renda-variavel-acoes' },
+  { name: 'Fundos de Ações', path: 'renda-variavel-fundos-acoes' },
+  { name: 'Fundos Imobiliários', path: 'renda-variavel-fundos-imobiliarios' },
+  { name: 'Opções', path: 'renda-variavel-opcoes' }
 ];
 
 const StyledToggleMenuIcons = styled.img`
