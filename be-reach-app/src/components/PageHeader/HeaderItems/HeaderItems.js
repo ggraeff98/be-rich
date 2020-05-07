@@ -20,6 +20,10 @@ const StyledUlContainer = styled.ul`
     display: block;
     height: unset;
   }
+
+  &:last-child {
+    border-bottom: 1px solid ${NORMAL_WHITE};
+  }
 `;
 
 const StyleedLi = styled.li`
@@ -64,8 +68,8 @@ const StyleedLi = styled.li`
 const StyledRelatedItemsContainer = styled.div`
   color: ${NORMAL_WHITE};
   overflow: hidden;
-  height: ${(props) => (props.active ? '156px' : '0px')};
-  transition: height 1s ease-out;
+  height: ${(props) => (props.active ? `${props.itemsAmount * 26}px` : '0px')};
+  transition: height 0.5s ease-out;
 `;
 
 const StyledRelatedItemsUl = styled.ul`
@@ -108,7 +112,10 @@ const HeaderItem = (props) => {
             {option.label}
           </div>
         </StyleedLi>
-        <StyledRelatedItemsContainer active={selectedItemState.index === i}>
+        <StyledRelatedItemsContainer
+          active={selectedItemState.index === i}
+          itemsAmount={option.relatedIncomes.length}
+        >
           <StyledRelatedItemsUl>
             {option.relatedIncomes &&
               option.relatedIncomes.map((item) => {

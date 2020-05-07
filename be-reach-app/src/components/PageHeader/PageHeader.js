@@ -17,6 +17,12 @@ const fixedIncomes = [
   { name: 'LCIs' }
 ];
 
+const variableIncomes = [
+  { name: 'Ações' },
+  { name: 'Fundos Imobiliários' },
+  { name: 'Opções' }
+];
+
 const StyledToggleMenuIcons = styled.img`
   padding: 5px 10px;
   &:hover {
@@ -45,7 +51,7 @@ const headerItems = [
     imagePath: variableGraph,
     label: 'Renda Variável',
     alt: 'renda-variável',
-    relatedIncomes: fixedIncomes,
+    relatedIncomes: variableIncomes,
     selected: false
   }
 ];
