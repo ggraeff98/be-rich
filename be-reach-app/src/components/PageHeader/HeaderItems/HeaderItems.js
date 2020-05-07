@@ -106,6 +106,9 @@ const HeaderItem = (props) => {
     index === selectedItemState.index
       ? setSelectedItemState({ index: null })
       : setSelectedItemState({ index });
+    if (index == 0) {
+      itemClicked('inicio');
+    }
   };
 
   const itemClicked = (path) => {
@@ -125,24 +128,26 @@ const HeaderItem = (props) => {
             {option.label}
           </div>
         </StyleedLi>
-        <StyledRelatedItemsContainer
-          active={selectedItemState.index === i}
-          itemsAmount={option.relatedIncomes.length}
-        >
-          <StyledRelatedItemsUl>
-            {option.relatedIncomes &&
-              option.relatedIncomes.map((item) => {
-                return (
-                  <StyledRelatedItemsLi
-                    onClick={() => itemClicked(item.path)}
-                    key={item.name}
-                  >
-                    <StyledNavLink to={`/${item.path}`}>{item.name}</StyledNavLink>
-                  </StyledRelatedItemsLi>
-                );
-              })}
-          </StyledRelatedItemsUl>
-        </StyledRelatedItemsContainer>
+        {option.relatedLinks ? (
+          <StyledRelatedItemsContainer
+            active={selectedItemState.index === i}
+            itemsAmount={option.relatedLinks.length}
+          >
+            <StyledRelatedItemsUl>
+              {option.relatedLinks &&
+                option.relatedLinks.map((item) => {
+                  return (
+                    <StyledRelatedItemsLi
+                      onClick={() => itemClicked(item.path)}
+                      key={item.name}
+                    >
+                      <StyledNavLink to={`/${item.path}`}>{item.name}</StyledNavLink>
+                    </StyledRelatedItemsLi>
+                  );
+                })}
+            </StyledRelatedItemsUl>
+          </StyledRelatedItemsContainer>
+        ) : null}
       </StyledDivContainer>
     );
   });

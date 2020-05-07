@@ -1,3 +1,4 @@
+export const SO_LIGHT_GOLDEN = '#ffc554';
 export const LIGHT_GOLDEN = '#f2b233';
 export const NORMAL_GOLDEN = '#dd981d';
 

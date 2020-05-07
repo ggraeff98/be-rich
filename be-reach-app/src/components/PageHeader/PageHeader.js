@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import linearGraph from '../../assets/svgs/linear-graphic.svg';
 import variableGraph from '../../assets/svgs/variable-graphic.svg';
 import closeIcon from '../../assets/svgs/close.svg';
-import { LIGHT_GOLDEN } from '../../constants/styleConstants';
+import { SO_LIGHT_GOLDEN } from '../../constants/styleConstants';
 import { IPAD_PRO } from '../../constants/breakPointConstants';
 import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
+import money from '../../assets/images/money-bag.png';
 
-const fixedIncomes = [
+const homeLink = [{ name: 'Início', path: 'inicio' }];
+
+const fixedIncomesLinks = [
   { name: 'O que é?', path: 'renda-fixa' },
   { name: 'Títulos Públicos', path: 'renda-fixa-titulos-publicos' },
   { name: 'CDBs', path: 'renda-fixa-cdb' },
@@ -18,7 +21,7 @@ const fixedIncomes = [
   { name: 'LCIs', path: 'renda-fixa-lci' }
 ];
 
-const variableIncomes = [
+const variableIncomesLinks = [
   { name: 'O que é?', path: 'renda-variavel' },
   { name: 'Ações', path: 'renda-variavel-acoes' },
   { name: 'Fundos de Ações', path: 'renda-variavel-fundos-acoes' },
@@ -34,7 +37,7 @@ const StyledToggleMenuIcons = styled.img`
 `;
 
 const StyledHeader = styled.header`
-  background-color: ${LIGHT_GOLDEN};
+  background-color: ${SO_LIGHT_GOLDEN};
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     padding: 0px;
@@ -43,18 +46,19 @@ const StyledHeader = styled.header`
 `;
 
 const headerItems = [
+  { imagePath: money, label: 'Início', alt: 'início' },
   {
     imagePath: linearGraph,
     label: 'Renda Fixa',
     alt: 'renda-fixa',
-    relatedIncomes: fixedIncomes,
+    relatedLinks: fixedIncomesLinks,
     selected: false
   },
   {
     imagePath: variableGraph,
     label: 'Renda Variável',
     alt: 'renda-variável',
-    relatedIncomes: variableIncomes,
+    relatedLinks: variableIncomesLinks,
     selected: false
   }
 ];
