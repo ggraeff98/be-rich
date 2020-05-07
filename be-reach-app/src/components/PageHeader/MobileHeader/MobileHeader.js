@@ -11,6 +11,7 @@ const StyledMobileHeaderContainer = styled.div`
   justify-content: space-between;
   position: fixed;
   background-color: ${NORMAL_WHITE};
+  width: 100%;
 `;
 
 const StyledToggleMenuIcons = styled.img`
