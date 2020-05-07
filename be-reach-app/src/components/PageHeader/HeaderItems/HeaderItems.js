@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IPAD_PRO } from '../../../constants/breakPointConstants';
 import { NORMAL_WHITE } from '../../../constants/styleConstants';
 import { LateralMenuContext } from '../../../contexts/lateral-menu-context';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 const StyledDivContainer = styled.div`
   height: 100%;
@@ -108,8 +108,9 @@ const HeaderItem = (props) => {
       : setSelectedItemState({ index });
   };
 
-  const itemClicked = (e) => {
+  const itemClicked = (path) => {
     lateralMenuContext.onToggleLateralMenu();
+    props.history.push(`/${path}`);
   };
 
   const headerItems = props.menuOptions.map((option, i) => {
@@ -132,7 +133,10 @@ const HeaderItem = (props) => {
             {option.relatedIncomes &&
               option.relatedIncomes.map((item) => {
                 return (
-                  <StyledRelatedItemsLi onClick={itemClicked} key={item.name}>
+                  <StyledRelatedItemsLi
+                    onClick={() => itemClicked(item.path)}
+                    key={item.name}
+                  >
                     <StyledNavLink to={`/${item.path}`}>{item.name}</StyledNavLink>
                   </StyledRelatedItemsLi>
                 );
@@ -146,4 +150,4 @@ const HeaderItem = (props) => {
   return <StyledUlContainer>{headerItems}</StyledUlContainer>;
 };
 
-export default HeaderItem;
+export default withRouter(HeaderItem);
