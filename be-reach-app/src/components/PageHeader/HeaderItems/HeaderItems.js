@@ -84,6 +84,16 @@ const StyledRelatedItemsLi = styled.li`
   margin-left: 45px;
 `;
 
+const StyledNavLink = styled(NavLink)`
+  color: ${NORMAL_WHITE};
+  text-decoration: none;
+
+  &.active {
+    border-bottom: 4px solid ${NORMAL_WHITE};
+    color: white;
+  }
+`;
+
 const HeaderItem = (props) => {
   const lateralMenuContext = useContext(LateralMenuContext);
 
@@ -123,7 +133,7 @@ const HeaderItem = (props) => {
               option.relatedIncomes.map((item) => {
                 return (
                   <StyledRelatedItemsLi onClick={itemClicked} key={item.name}>
-                    <NavLink to={`/${item.path}`}>{item.name}</NavLink>
+                    <StyledNavLink to={`/${item.path}`}>{item.name}</StyledNavLink>
                   </StyledRelatedItemsLi>
                 );
               })}
