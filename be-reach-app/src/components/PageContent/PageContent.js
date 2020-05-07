@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledPageContentContainer = styled.div``;
+const StyledPageContentContainer = styled.div`
+  padding: 0 10px;
+`;
 
 const pageContent = () => {
   return (

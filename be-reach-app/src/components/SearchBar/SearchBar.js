@@ -20,7 +20,8 @@ const StyledSeacrhInput = styled.input`
   outline: none;
   border-style: none;
   border: 1px solid ${NORMAL_GREY};
-  width: 85%;
+  width: 100%;
+  margin-right: 5px;
 `;
 
 const searchBar = () => {
