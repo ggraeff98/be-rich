@@ -7,7 +7,7 @@ const StyledDivContainer = styled.div``;
 const StyledDivListItems = styled.nav`
   position: absolute;
   width: 75%;
-  max-width: 500px;
+  max-width: 300px;
   left: ${(props) => (props.isOpen ? '0%' : '-75%')};
   transition: 1s;
   height: 100%;
