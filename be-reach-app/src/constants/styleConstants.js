@@ -5,3 +5,5 @@ export const NORMAL_WHITE = '#ffffff';
 
 export const NORMAL_GREEN = '#208c61';
 export const LIGHT_GREEN = '#2caf76';
+
+export const NORMAL_GREY = '#b5b5b5';
