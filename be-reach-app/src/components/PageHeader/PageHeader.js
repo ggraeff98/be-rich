@@ -9,15 +9,17 @@ import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const fixedIncomes = [
+  { name: 'O que é?' },
   { name: 'Títulos Públicos' },
   { name: 'CDBs' },
   { name: 'CRAs' },
   { name: 'CRISs' },
-  { name: 'LCAa' },
+  { name: 'LCAs' },
   { name: 'LCIs' }
 ];
 
 const variableIncomes = [
+  { name: 'O que é?' },
   { name: 'Ações' },
   { name: 'Fundos Imobiliários' },
   { name: 'Opções' }

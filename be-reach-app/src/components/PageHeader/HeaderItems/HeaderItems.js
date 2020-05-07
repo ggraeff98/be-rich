@@ -68,7 +68,7 @@ const StyleedLi = styled.li`
 const StyledRelatedItemsContainer = styled.div`
   color: ${NORMAL_WHITE};
   overflow: hidden;
-  height: ${(props) => (props.active ? `${props.itemsAmount * 26}px` : '0px')};
+  height: ${(props) => (props.active ? `${props.itemsAmount * 31}px` : '0px')};
   transition: height 0.5s ease-out;
 `;
 
@@ -79,7 +79,8 @@ const StyledRelatedItemsUl = styled.ul`
 `;
 
 const StyledRelatedItemsLi = styled.li`
-  padding: 0px 0px 5px 45px;
+  padding: 5px 0;
+  margin-left: 45px;
 `;
 
 const HeaderItem = (props) => {
