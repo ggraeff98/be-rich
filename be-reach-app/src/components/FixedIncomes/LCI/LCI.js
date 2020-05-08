@@ -2,9 +2,9 @@ import React from 'react';
 
 const lci = () => {
   return (
-    <fiv>
+    <div>
       <h1>LCIs</h1>
-    </fiv>
+    </div>
   );
 };
 

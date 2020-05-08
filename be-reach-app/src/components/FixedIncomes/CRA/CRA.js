@@ -2,9 +2,9 @@ import React from 'react';
 
 const cra = () => {
   return (
-    <fiv>
+    <div>
       <h1>CRAs</h1>
-    </fiv>
+    </div>
   );
 };
 

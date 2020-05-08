@@ -2,9 +2,9 @@ import React from 'react';
 
 const cdb = () => {
   return (
-    <fiv>
+    <div>
       <h1>CDBs</h1>
-    </fiv>
+    </div>
   );
 };
 

@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
 `;
 
 const headerItems = [
-  { imagePath: money, label: 'Início', alt: 'início' },
+  { imagePath: money, label: 'Início', alt: 'inicio' },
   {
     imagePath: linearGraph,
     label: 'Renda Fixa',

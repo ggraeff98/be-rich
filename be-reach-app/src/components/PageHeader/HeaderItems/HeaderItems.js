@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { IPAD_PRO } from '../../../constants/breakPointConstants';
 import { NORMAL_WHITE } from '../../../constants/styleConstants';
@@ -95,6 +95,13 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const HeaderItem = (props) => {
+  useEffect(() => {
+    props.menuOptions.forEach((item, i) => {
+      if (props.location.pathname.includes(item.alt))
+        setSelectedItemState({ index: i });
+    });
+  }, []);
+
   const lateralMenuContext = useContext(LateralMenuContext);
 
   const [selectedItemState, setSelectedItemState] = useState({
@@ -103,7 +110,7 @@ const HeaderItem = (props) => {
 
   const onSelectItemHandler = (index) => {
     if (window.innerWidth > IPAD_PRO + 1) return;
-    index === selectedItemState.index
+    index === selectedItemState.index && index !== 0
       ? setSelectedItemState({ index: null })
       : setSelectedItemState({ index });
     if (index === 0) {

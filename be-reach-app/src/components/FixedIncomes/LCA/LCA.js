@@ -2,9 +2,9 @@ import React from 'react';
 
 const lca = () => {
   return (
-    <fiv>
+    <div>
       <h1>LCAs</h1>
-    </fiv>
+    </div>
   );
 };
 

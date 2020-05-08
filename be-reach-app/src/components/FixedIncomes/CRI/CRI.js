@@ -2,9 +2,9 @@ import React from 'react';
 
 const cri = () => {
   return (
-    <fiv>
+    <div>
       <h1>CRIs</h1>
-    </fiv>
+    </div>
   );
 };
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 const publicTitles = () => {
   return (
-    <fiv>
+    <div>
       <h1>Public Titles</h1>
-    </fiv>
+    </div>
   );
 };
 
