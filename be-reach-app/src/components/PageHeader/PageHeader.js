@@ -36,10 +36,11 @@ const StyledToggleMenuIcons = styled.img`
 
 const StyledHeader = styled.header`
   background-color: ${SO_LIGHT_GOLDEN};
+  width: 100%;
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     padding: 0px;
-    height: 100vh;
+    min-height: 100vh;
   }
 `;
 

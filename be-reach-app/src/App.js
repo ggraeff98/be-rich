@@ -10,7 +10,6 @@ import PageContent from './components/PageContent/PageContent';
 const StyleedDivMain = styled.div`
   touch-action: manipulation;
   font-family: 'Ubuntu';
-  height: 100vh;
   display: flex;
 `;
 
