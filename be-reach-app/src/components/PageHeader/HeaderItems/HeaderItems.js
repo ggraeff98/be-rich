@@ -100,7 +100,7 @@ const HeaderItem = (props) => {
       if (props.location.pathname.includes(item.alt))
         setSelectedItemState({ index: i });
     });
-  }, []);
+  }, [props.location.pathname, props.menuOptions]);
 
   const lateralMenuContext = useContext(LateralMenuContext);
 
