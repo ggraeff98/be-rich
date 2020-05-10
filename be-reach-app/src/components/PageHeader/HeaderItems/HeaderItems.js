@@ -7,6 +7,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 
 const StyledDivContainer = styled.div`
   height: 100%;
+  border-bottom: 1px solid ${NORMAL_WHITE};
 `;
 
 const StyledUlContainer = styled.ul`
@@ -21,10 +22,6 @@ const StyledUlContainer = styled.ul`
     display: block;
     height: unset;
   }
-
-  &:last-child {
-    border-bottom: 1px solid ${NORMAL_WHITE};
-  }
 `;
 
 const StyleedLi = styled.li`
@@ -36,7 +33,6 @@ const StyleedLi = styled.li`
   align-items: center;
 
   @media (max-width: ${IPAD_PRO + 1}px) {
-    border-top: 1px solid ${NORMAL_WHITE};
     padding: 5px 10px;
     height: unset;
     display: block;
