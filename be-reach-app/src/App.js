@@ -9,7 +9,7 @@ import PageContent from './components/PageContent/PageContent';
 
 const StyleedDivMain = styled.div`
   touch-action: manipulation;
-  font-family: 'Ubuntu';
+  font-family: 'Barlow Condensed';
   display: flex;
 `;
 

@@ -12,6 +12,7 @@ const StyledDivListItems = styled.nav`
   transition: 1s;
   height: 100%;
   top: 0;
+  z-index: 1;
 `;
 
 StyledDivListItems.defaultProps = {

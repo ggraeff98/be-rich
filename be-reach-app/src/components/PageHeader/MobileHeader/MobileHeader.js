@@ -27,7 +27,7 @@ const StyledPageContentBackgorund = styled.div`
   width: 100%;
   top: 0;
   background-color: ${(props) =>
-    props.lateralMenuState ? 'rgba(0, 0, 0, 0.3)' : 'trasparent'};
+    props.lateralMenuState ? 'rgba(0, 0, 0, 0.4)' : 'trasparent'};
 `;
 
 const MobileHeader = () => {

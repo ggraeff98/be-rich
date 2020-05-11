@@ -8,6 +8,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 const StyledDivContainer = styled.div`
   height: 100%;
   border-bottom: 1px solid ${NORMAL_WHITE};
+  font-size: 16pt;
 `;
 
 const StyledUlContainer = styled.ul`
@@ -27,7 +28,6 @@ const StyledUlContainer = styled.ul`
 const StyleedLi = styled.li`
   color: ${NORMAL_WHITE};
   padding: 0 10px;
-  font-size: 20px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ const StyleedLi = styled.li`
 const StyledRelatedItemsContainer = styled.div`
   color: ${NORMAL_WHITE};
   overflow: hidden;
-  height: ${(props) => (props.active ? `${props.itemsAmount * 31}px` : '0px')};
+  height: ${(props) => (props.active ? `${props.itemsAmount * 33}px` : '0px')};
   transition: height 0.5s ease-out;
 `;
 
@@ -76,7 +76,7 @@ const StyledRelatedItemsUl = styled.ul`
 `;
 
 const StyledRelatedItemsLi = styled.li`
-  padding: 5px 0;
+  padding: 3px 0;
   margin-left: 45px;
 `;
 

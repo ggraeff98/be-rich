@@ -14,6 +14,7 @@ const StyledPageContentContainer = styled.div`
   padding: 0 10px;
   margin-top: 45px;
   width: 100%;
+  min-height: calc(100vh - 45px);
 `;
 
 const pageContent = () => {

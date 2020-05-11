@@ -8,7 +8,7 @@ import { IPAD_PRO } from '../../constants/breakPointConstants';
 import HeaderItems from './HeaderItems/HeaderItems';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 import money from '../../assets/images/money-bag.png';
-import maisRicoWhiteLogoSmall from '../../assets/images/logo-mais-rico-small.png';
+import maisRicoWhiteLogoSmall from '../../assets/images/logo-mais-rico-branco.png';
 
 const fixedIncomesLinks = [
   { name: 'O que é?', path: 'renda-fixa' },
@@ -35,9 +35,8 @@ const StyledToggleMenuIcons = styled.img`
 `;
 
 const StyledMaisRicoLogo = styled.img`
-  height: 60px;
-  width: 120px;
-  padding-left: 15px;
+  height: 70px;
+  width: 150px;
 `;
 
 const StyledHeader = styled.header`
@@ -53,7 +52,7 @@ const StyledHeader = styled.header`
 const StyledLateralMenuHeaderContainer = styled.div`
   display: flex;
   align-items: start;
-  padding: 10px;
+  padding: 10px 0;
   background-color: #43433f;
 `;
 
@@ -97,7 +96,6 @@ const PageHeader = (props) => {
   return (
     <StyledHeader>
       <StyledLateralMenuHeaderContainer>
-        {window.innerWidth <= IPAD_PRO + 1 ? closeLateralMenuIcon : null}
         {maisRicoLogo}
       </StyledLateralMenuHeaderContainer>
       <HeaderItems menuOptions={headerItems}></HeaderItems>
