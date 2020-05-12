@@ -18,6 +18,7 @@ const StyledUlContainer = styled.ul`
   padding: 0;
   list-style: none;
   height: 60px;
+  font-weight: 500;
 
   @media (max-width: ${IPAD_PRO + 1}px) {
     display: block;
@@ -36,7 +37,7 @@ const StyleedLi = styled.li`
     padding: 5px 10px;
     height: unset;
     display: block;
-    font-weight: ${(props) => (props.selected ? 'bold' : 'normal')};
+    font-weight: ${(props) => (props.selected ? 'bold' : '500')};
   }
 
   @media (min-width: ${IPAD_PRO + 1}px) {
@@ -72,7 +73,6 @@ const StyledRelatedItemsContainer = styled.div`
 const StyledRelatedItemsUl = styled.ul`
   padding: 0;
   list-style: none;
-  font-weight: normal;
 `;
 
 const StyledRelatedItemsLi = styled.li`

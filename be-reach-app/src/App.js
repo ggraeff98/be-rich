@@ -11,6 +11,14 @@ const StyleedDivMain = styled.div`
   touch-action: manipulation;
   font-family: 'Barlow Condensed';
   display: flex;
+  max-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+`;
+
+const StyledNormalPage = styled.div`
+  width: 100%;
 `;
 
 const App = () => {
@@ -25,7 +33,10 @@ const App = () => {
           <PageContent></PageContent>
         </LateralMenuProvider>
       ) : (
-        <PageHeader></PageHeader>
+        <StyledNormalPage>
+          <PageHeader></PageHeader>
+          <PageContent></PageContent>
+        </StyledNormalPage>
       )}
     </StyleedDivMain>
   );

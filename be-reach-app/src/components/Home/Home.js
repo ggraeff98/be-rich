@@ -3,10 +3,11 @@ import maisRicoCapa from '../../assets/images/capa-site-mais-rico.png';
 import styled from 'styled-components';
 import maisRicoLogo from '../../assets/images/logo-mais-rico-laranja.png';
 import Button from '../Common/Button/Button';
+import { TEXT_GREY } from '../../constants/styleConstants';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
 const StyledHomeContainer = styled.div`
-  color: #727272;
+  color: ${TEXT_GREY};
   text-align: justify;
 `;
 

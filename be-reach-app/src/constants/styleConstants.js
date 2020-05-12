@@ -11,3 +11,5 @@ export const TEST_GREEN = '#21805b';
 export const NORMAL_GREY = '#b5b5b5';
 
 export const NORMAL_BLACK = '#000000';
+
+export const TEXT_GREY = '#727272';

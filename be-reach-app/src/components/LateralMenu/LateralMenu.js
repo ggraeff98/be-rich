@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { LateralMenuContext } from '../../contexts/lateral-menu-context';
 
-const StyledDivContainer = styled.div``;
+const StyledDivContainer = styled.div`
+  overflow: auto;
+`;
 
 const StyledDivListItems = styled.nav`
-  position: absolute;
+  position: fixed;
   width: 75%;
   max-width: 300px;
   left: ${(props) => (props.isOpen ? '0%' : '-75%')};
